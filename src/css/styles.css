@@ -1,0 +1,80 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+section{
+    display: flex;
+    width: 100%;
+    height: 200px;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Transición se hace en el elemento, no en el hover como tal. Es un cambio de estado */
+
+.circulo{
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    background-color: blue;
+    transition: background-color scale; /* para aplicarselo a todas las propiedades, o se pone la propiedad específica */
+    transition-duration: 2s; /* Tiempo */
+}
+
+.circulo:hover{
+    scale: 1.4;
+    background-color: red;
+    box-shadow: 0 0 8px black;
+}
+
+.section2{
+    gap: 30px;
+    background-color: bisque;
+}
+
+.circulo21, .circulo22, .circulo23{
+    opacity: 0;
+}
+
+.section2:hover .circulo{
+    opacity: 1;
+}
+
+.section3{
+    background-color: burlywood;
+    align-items: start;
+}
+
+.circulo21{
+    transition-delay: 300ms;
+}
+
+.circulo22{
+    transition-delay: 600ms;
+}
+
+.circulo23{
+    transition-delay: 900ms;
+}
+
+.circulo3{
+    animation-name: movimiento; /* nombre del keyframe */
+    animation-duration: 2s;
+    animation-timing-function: linear; /* Aceleración */
+    animation-iteration-count: infinite; /* cuantas veces se repite */
+    animation-direction: alternate; /* hace que al llegar a la esquina rebote - ciclo */
+}
+
+/* animation-timeline -> cuando se activa la animación */
+
+@keyframes movimiento {
+    from{ /* Desde */
+        transform: translateY(0px); /* se mueve en el eje Y */
+
+    }
+    to{ /* hasta */
+        transform: translateY(150px);
+    }
+    
+}
